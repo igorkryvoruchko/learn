@@ -70,3 +70,4 @@ easy_admin:
     entities:
         - AppBundle\Entity\Post
 
+
