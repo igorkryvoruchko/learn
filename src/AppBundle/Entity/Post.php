@@ -20,18 +20,36 @@ class Post
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @ORM\Column(name="title", type="string", nullable=true)
+     */
     private $title;
-    private $text;
+
+    /**
+     * @ORM\Column(name="full_text", type="text", nullable=true)
+     */
+    private $full_text;
+
+    /**
+     * @ORM\Column(name="category", type="string", nullable=true)
+     */
     private $category;
 
     /**
-     * Get id
-     *
      * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 
     /**
@@ -53,17 +71,17 @@ class Post
     /**
      * @return mixed
      */
-    public function getText()
+    public function getFullText()
     {
-        return $this->text;
+        return $this->full_text;
     }
 
     /**
-     * @param mixed $text
+     * @param mixed $full_text
      */
-    public function setText($text)
+    public function setFullText($full_text)
     {
-        $this->text = $text;
+        $this->full_text = $full_text;
     }
 
     /**
