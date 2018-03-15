@@ -37,6 +37,28 @@ class Post
     private $category;
 
     /**
+     * @ORM\Column(name="date", nullable=true)
+     */
+    private $date;
+
+    /**
+     * @return mixed
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param mixed $date
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
+
+
+    /**
      * @return int
      */
     public function getId()

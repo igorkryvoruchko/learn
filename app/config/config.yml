@@ -10,7 +10,7 @@ parameters:
 
 framework:
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -67,7 +67,24 @@ swiftmailer:
     spool: { type: memory }
 
 easy_admin:
+    site_name: '<i>New Blog</i>'
+    list:
+          max_results: 15
+    design:
+        brand_color: '#00BFFF'
+
     entities:
-        - AppBundle\Entity\Post
+        Post:
+            class: AppBundle\Entity\Post
+            form:
+                title: 'Add new post'
+                fields:
+                    - title
+                    - full_text
+                    - category
+                    - date
+
+
+
 
 
