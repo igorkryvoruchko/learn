@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="post")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PostRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Post
 {
@@ -37,7 +38,7 @@ class Post
     private $category;
 
     /**
-     * @ORM\Column(name="date", nullable=true)
+     * @ORM\Column(name="date", type="datetime", nullable=true)
      */
     private $date;
 
@@ -54,7 +55,7 @@ class Post
      */
     public function setDate($date)
     {
-        $this->date = $date;
+        $this->date = new \DateTime();
     }
 
 
@@ -121,7 +122,5 @@ class Post
     {
         $this->category = $category;
     }
-
-
 }
 
